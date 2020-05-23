@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block idly %}
+<h1>Order Donuts</h1>
+<h2 style="color: dimgrey">{{ note }}</h2>
+<form action="{% url 'order' %}" method="post">
+    {% csrf_token %}
+     {% bootstrap_form strawberryform %}
+    <input type="submit" value="Order Donut">
+</form>
+    <style>
+    body{
+        margin: 10px;
+    }
+    </style>
+{% endblock %}
